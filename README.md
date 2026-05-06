@@ -12,9 +12,6 @@
 
 ---
 
-<!-- TODO: 替换为实际的 CLI/Agent 输出截图 -->
-<img src="assets/demo-screenshot.png" alt="AlphaGBM 期权分析输出" width="720">
-
 ### 30 秒演示
 
 ```bash
