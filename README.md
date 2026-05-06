@@ -2,310 +2,310 @@
 
 # AlphaGBM Skills
 
-**See what options are pricing in — with real data, not guesswork.**
+**用真实数据看透期权定价——而非凭空猜测。**
 
-*26 AI skills for options & research intelligence · Built on real market data · Trusted by 10,000+ traders*
+*26 个 AI Skills，覆盖期权与研究智能 · 基于真实市场数据 · 受 10,000+ 交易者信赖*
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Skills](https://img.shields.io/badge/skills-26-green.svg)](#skills-overview) [![Users](https://img.shields.io/badge/users-10K%2B-orange.svg)](https://alphagbm.com)
 
-[Website](https://alphagbm.com) · [Documentation](#skills-overview) · [Quick Start](#quick-start) · [Contributing](CONTRIBUTING.md)
+[官网](https://alphagbm.com) · [文档](#skills-overview) · [快速开始](#quick-start) · [贡献指南](CONTRIBUTING.md)
 
 ---
 
-<!-- TODO: Replace with actual screenshot of CLI/agent output -->
-<img src="assets/demo-screenshot.png" alt="AlphaGBM options analysis output" width="720">
+<!-- TODO: 替换为实际的 CLI/Agent 输出截图 -->
+<img src="assets/demo-screenshot.png" alt="AlphaGBM 期权分析输出" width="720">
 
-### 30-Second Demo
+### 30 秒演示
 
 ```bash
 git clone https://github.com/AlphaGBM/skills.git .claude/skills/alphagbm
 ```
 
-Then ask your AI: *"Analyze AAPL options using AlphaGBM"* — works instantly with built-in data, no API key needed.
+然后问你的 AI：*"使用 AlphaGBM 分析 AAPL 期权"* —— 无需 API Key，内置数据即刻生效。
 
 </div>
 
-## What is AlphaGBM?
+## 什么是 AlphaGBM？
 
-AlphaGBM is a **real-data options & research intelligence layer** for traders and AI agents. Every number comes from real market data -- IV, Greeks, VRP, skew, flow, plus a tracked research workspace -- not LLM hallucination.
+AlphaGBM 是面向交易者和 AI 智能体的**真实数据期权与研究智能层**。每一个数字都来自真实市场数据——IV、希腊值、VRP、偏斜、流量，以及可追踪的研究工作区——而非 LLM 幻觉。
 
-These 26 skills bring AlphaGBM's capabilities into your AI workflow: Claude Code, Cursor, Windsurf, or any agent that supports skills.
+这 26 个 Skills 将 AlphaGBM 的能力带入你的 AI 工作流：Claude Code、Cursor、Windsurf，或任何支持 Skills 的智能体。
 
-### Why AlphaGBM?
+### 为什么选择 AlphaGBM？
 
-| | LLM Roleplay Tools | Generic Finance APIs | **AlphaGBM** |
+| | LLM 角色扮演工具 | 通用金融 API | **AlphaGBM** |
 |--|-------------------|---------------------|-------------|
-| Data Source | LLM-generated | Delayed/basic | **Real-time options data** |
-| Verifiable | "85% confidence" | Partial | **Every number has a source** |
-| Options Depth | None | Basic chain | **IV/HV/VRP/Greeks/Skew/Surface** |
-| Scoring | Subjective | None | **Quantitative scoring (0-100 options, 1-10 stocks)** |
-| Analysis Model | None | None | **G = B + M (Gain = Basics + Momentum)** |
-| Battle-tested | No | Varies | **10K users, 3mo live trading** |
-| Coverage | US only | Varies | **US + HK + CN + Commodities** |
+| 数据来源 | LLM 生成 | 延迟/基础 | **实时期权数据** |
+| 可验证性 | "85% 置信度" | 部分可验证 | **每个数字都有来源** |
+| 期权深度 | 无 | 基础链 | **IV/HV/VRP/希腊值/偏斜/曲面** |
+| 评分体系 | 主观 | 无 | **量化评分（期权 0-100，股票 1-10）** |
+| 分析模型 | 无 | 无 | **G = B + M（收益 = 基本面 + 动量）** |
+| 实战验证 | 否 | 不一 | **10K 用户，3 个月实盘交易** |
+| 覆盖市场 | 仅美股 | 不一 | **美股 + 港股 + A 股 + 大宗商品** |
 
-## Quick Start
+## 快速开始
 
-### Install as Claude Code Skills
+### 作为 Claude Code Skills 安装
 
 ```bash
-# Clone into your project
+# 克隆到你的项目
 git clone https://github.com/AlphaGBM/skills.git .claude/skills/alphagbm
 
-# Or add as submodule
+# 或作为子模块添加
 git submodule add https://github.com/AlphaGBM/skills.git .claude/skills/alphagbm
 ```
 
-### Install for Cursor
+### 为 Cursor 安装
 
 ```bash
 git clone https://github.com/AlphaGBM/skills.git .cursor/skills/alphagbm
 ```
 
-### Install CLI
+### 安装 CLI
 
 ```bash
-# Clone and install
+# 克隆并安装
 git clone https://github.com/AlphaGBM/skills.git
 cd skills/cli
 pip install -e .
 
-# Set your API key
+# 设置你的 API Key
 alphagbm config set-key agbm_xxxxxxxxxxxxxxxx
 
-# Start analyzing
+# 开始分析
 alphagbm stock analyze AAPL
 alphagbm options score NVDA
 ```
 
-See [cli/README.md](cli/README.md) for full CLI documentation.
+完整 CLI 文档见 [cli/README.md](cli/README.md)。
 
-### Try It (No API Key Needed)
+### 立即试用（无需 API Key）
 
-All skills include built-in demo data for AAPL, NVDA, SPY, TSLA, and META. Just ask your AI:
+所有 Skills 均内置 AAPL、NVDA、SPY、TSLA 和 META 的演示数据。直接问你的 AI：
 
-> "Analyze AAPL stock using AlphaGBM"
-> "Score NVDA options"
-> "Show me TSLA's volatility surface"
-> "What's the best bullish strategy for META?"
+> "使用 AlphaGBM 分析 AAPL 股票"
+> "对 NVDA 期权评分"
+> "显示 TSLA 的波动率曲面"
+> "META 最佳看涨策略是什么？"
 
-### Connect Live Data
+### 接入实时数据
 
 ```bash
-# Set your API key for real-time data
+# 设置 API Key 以获取实时数据
 export ALPHAGBM_API_KEY=agbm_xxxxxxxxxxxxxxxx
-export ALPHAGBM_BASE_URL=https://alphagbm.zeabur.app  # optional, this is the default
+export ALPHAGBM_BASE_URL=https://alphagbm.zeabur.app  # 可选，此为默认值
 
-# Get your free key at https://alphagbm.com/api-keys
+# 在 https://alphagbm.com/api-keys 获取免费 Key
 ```
 
-### Check API Health
+### 检查 API 健康状态
 
 ```bash
 curl https://alphagbm.zeabur.app/api/health
 ```
 
-Returns API status, available data fields, data source health, and market coverage — no auth needed. Useful for AI agents to verify what's available before making calls.
+返回 API 状态、可用数据字段、数据源健康状况和市场覆盖范围——无需认证。适合 AI 智能体在调用前验证可用性。
 
-### Quota
+### 配额
 
-| Plan | Stock Analysis | Options Analysis | Quick Quote / Snapshot |
-|------|---------------|-----------------|----------------------|
-| Free | 2/day | 1/day | Unlimited |
-| Plus | 1,000/month | 1,000/month | Unlimited |
-| Pro | 5,000/month | 5,000/month | Unlimited |
+| 套餐 | 股票分析 | 期权分析 | 快速报价 / 快照 |
+|------|---------|---------|----------------|
+| 免费 | 2次/天 | 1次/天 | 无限制 |
+| Plus | 1,000次/月 | 1,000次/月 | 无限制 |
+| Pro | 5,000次/月 | 5,000次/月 | 无限制 |
 
-## Skills Overview
+## Skills 概览
 
-### Core Analysis (7 skills)
+### 核心分析（7 个 Skills）
 
-| Skill | What It Does | Example Query |
-|-------|-------------|---------------|
-| [**Stock Analysis**](skills/alphagbm-stock-analysis/) | G=B+M model: fundamentals, momentum, EV, risk score, AI report | "Analyze AAPL" |
-| [**Options Score**](skills/alphagbm-options-score/) | Score 0-100 across 4 strategies (Sell Put/Call, Buy Put/Call) | "Best NVDA call to buy" |
-| [**Options Strategy**](skills/alphagbm-options-strategy/) | Strategy builder + scanner with 15+ templates | "Bullish play on TSLA" |
-| [**Vol Surface**](skills/alphagbm-vol-surface/) | 3D implied volatility across strikes & expiries | "Is AAPL IV expensive?" |
-| [**Vol Smile**](skills/alphagbm-vol-smile/) | Skew analysis for a single expiration | "NVDA put skew" |
-| [**Greeks**](skills/alphagbm-greeks/) | Greeks calculator + implied volatility solver | "Greeks for AAPL 220C" |
-| [**P&L Simulator**](skills/alphagbm-pnl-simulator/) | What-if analysis for any position | "Simulate my iron condor" |
+| Skill | 功能说明 | 示例查询 |
+|------|---------|---------|
+| [**股票分析**](skills/alphagbm-stock-analysis/) | G=B+M 模型：基本面、动量、EV、风险评分、AI 报告 | "分析 AAPL" |
+| [**期权评分**](skills/alphagbm-options-score/) | 4 种策略（卖 Put/Call、买 Put/Call）0-100 评分 | "最佳 NVDA 看涨期权" |
+| [**期权策略**](skills/alphagbm-options-strategy/) | 含 15+ 模板的策略构建器与扫描器 | "TSLA 看涨策略" |
+| [**波动率曲面**](skills/alphagbm-vol-surface/) | 跨行权价与到期日的三维隐含波动率 | "AAPL IV 贵吗？" |
+| [**波动率微笑**](skills/alphagbm-vol-smile/) | 单一到期日的偏斜分析 | "NVDA 认沽偏斜" |
+| [**希腊值**](skills/alphagbm-greeks/) | 希腊值计算器 + 隐含波动率求解器 | "AAPL 220C 的希腊值" |
+| [**盈亏模拟器**](skills/alphagbm-pnl-simulator/) | 任意持仓的假设情景分析 | "模拟我的铁鹰策略" |
 
-### Data Intelligence (6 skills)
+### 数据智能（6 个 Skills）
 
-| Skill | What It Does | Example Query |
-|-------|-------------|---------------|
-| [**IV Rank**](skills/alphagbm-iv-rank/) | IV percentile vs. 252-day history | "Is TSLA IV high?" |
-| [**Earnings IV Panel**](skills/alphagbm-earnings-crush/) | Crush history + implied move + IV Rank tag + priced Iron Condor | "Iron Condor for META earnings" |
-| [**Unusual Activity**](skills/alphagbm-unusual-activity/) | Smart money / large block detection | "Unusual options flow today" |
-| [**Market Sentiment**](skills/alphagbm-market-sentiment/) | VIX, Put/Call, Fear & Greed dashboard | "Market sentiment now" |
-| [**VIX Status**](skills/alphagbm-vix-status/) ✨ | 5-tier fear thermometer: calm / normal / seller sweet spot / caution / extreme fear | "Is this a good time for BPS?" |
-| [**FearScore**](skills/alphagbm-fear-score/) ✨ | Per-ticker 6-indicator panic composite; ≥60 is BPS entry signal | "Fear score QQQ", "is NVDA oversold" |
+| Skill | 功能说明 | 示例查询 |
+|------|---------|---------|
+| [**IV 排名**](skills/alphagbm-iv-rank/) | 与 252 天历史对比的 IV 百分位 | "TSLA IV 高吗？" |
+| [**财报 IV 面板**](skills/alphagbm-earnings-crush/) | 崩塌历史 + 隐含波动 + IV 排名标签 + 定价铁鹰组合 | "META 财报铁鹰策略" |
+| [**异常活动**](skills/alphagbm-unusual-activity/) | 聪明钱 / 大宗期权流检测 | "今日异常期权流" |
+| [**市场情绪**](skills/alphagbm-market-sentiment/) | VIX、认沽/认购比、恐贪指数仪表盘 | "当前市场情绪" |
+| [**VIX 状态**](skills/alphagbm-vix-status/) ✨ | 5 档恐慌温度计：平静 / 正常 / 卖方甜蜜点 / 谨慎 / 极度恐慌 | "现在适合做 BPS 吗？" |
+| [**恐慌评分**](skills/alphagbm-fear-score/) ✨ | 个股 6 指标恐慌综合评分；≥60 为 BPS 入场信号 | "QQQ 恐慌评分"、"NVDA 是否超卖" |
 
-### Workflow Tools (4 skills)
+### 工作流工具（4 个 Skills）
 
-| Skill | What It Does | Example Query |
-|-------|-------------|---------------|
-| [**Compare**](skills/alphagbm-compare/) | Side-by-side stock & options comparison | "AAPL vs MSFT" |
-| [**Watchlist**](skills/alphagbm-watchlist/) | Monitor tickers for key changes | "Add NVDA to watchlist" |
-| [**Alert**](skills/alphagbm-alert/) | Set IV, price, or activity alerts | "Alert if TSLA IV > 80" |
-| [**Polymarket**](skills/alphagbm-polymarket/) | Prediction market vs. options pricing | "Rate cut odds vs options" |
+| Skill | 功能说明 | 示例查询 |
+|------|---------|---------|
+| [**对比**](skills/alphagbm-compare/) | 股票与期权并排比较 | "AAPL vs MSFT" |
+| [**自选列表**](skills/alphagbm-watchlist/) | 监控股票关键变化 | "将 NVDA 加入自选" |
+| [**提醒**](skills/alphagbm-alert/) | 设置 IV、价格或活动提醒 | "TSLA IV > 80 时提醒我" |
+| [**Polymarket**](skills/alphagbm-polymarket/) | 预测市场与期权定价对比 | "降息概率 vs 期权" |
 
-### Risk & Portfolio Discipline (4 skills) ✨
+### 风险与投资组合纪律（4 个 Skills）✨
 
-Exit, hedge, and sizing decisions quantified from real data — not opinion.
+基于真实数据量化退出、对冲和仓位管理决策——而非主观判断。
 
-| Skill | What It Does | Example Query |
-|-------|-------------|---------------|
-| [**Hedge Advisor**](skills/alphagbm-hedge-advisor/) ✨ | Scenario-driven hedge for an existing position (Falling Knife / Bottom Fishing / Gain Protection); returns priced Long Put / Collar / Tier-down specs | "Hedge my AAPL at cost 140, now 180" |
-| [**BPS Backtest**](skills/alphagbm-bps-backtest/) ✨ | Walk-forward backtest of Bull Put Spread with signal vs no-signal control in one call | "Backtest BPS on QQQ — does FearScore work?" |
-| [**Take-Profit Lab**](skills/alphagbm-take-profit/) ✨ | Any-ticker 15-strategy exit backtest; auto-classifies whether it's holdable or needs tiered exit via a novel "rollercoaster rate" metric | "Should I hold TQQQ long-term?" |
-| [**Duan-Yongping Analysis**](skills/alphagbm-duan-analysis/) ✨ | Three-panel seller playbook (Sell Put at willing-buy price / Covered Call yield / VIX-tier panic-buy context) | "Duan-style analysis on AAPL" |
+| Skill | 功能说明 | 示例查询 |
+|------|---------|---------|
+| [**对冲顾问**](skills/alphagbm-hedge-advisor/) ✨ | 针对现有持仓的情景驱动对冲（刀锋下行 / 抄底 / 锁定收益）；返回定价后的长期认沽 / 领口 / 减仓方案 | "对冲我的 AAPL，成本 140，现价 180" |
+| [**BPS 回测**](skills/alphagbm-bps-backtest/) ✨ | 一次调用即可完成牛市认沽价差的滚动回测，含信号 vs 无信号对照组 | "回测 QQQ BPS——恐慌评分有效吗？" |
+| [**止盈实验室**](skills/alphagbm-take-profit/) ✨ | 任意股票 15 种退出策略回测；通过新颖的"过山车率"指标自动判断是否可持有或需分批退出 | "TQQQ 适合长期持有吗？" |
+| [**段永平分析**](skills/alphagbm-duan-analysis/) ✨ | 三板斧卖方操作手册（在愿意买入的价格卖认沽 / 持保看涨期权收益 / VIX 档位恐慌买入背景） | "AAPL 段式分析" |
 
-### Knowledge Base — Research Brain (5 skills)
+### 知识库——研究大脑（5 个 Skills）
 
-Build a personal, monitored research workspace. Profiles auto-refresh, theses get checked against triggers, the system audits itself weekly.
+构建个人化、可监控的研究工作区。档案自动刷新，投资逻辑触发点自动核查，系统每周自我审计。
 
-| Skill | What It Does | Example Query |
-|-------|-------------|---------------|
-| [**Company Profile**](skills/alphagbm-company-profile/) | Auto-built research files: fundamentals, PE/PB band, red flags, event radar | "Add NVDA to my knowledge base" |
-| [**Investment Thesis**](skills/alphagbm-investment-thesis/) | Buy reasons + structured sell triggers, monitored automatically | "Why did I buy AAPL?" |
-| [**Macro View**](skills/alphagbm-macro-view/) | Track VIX / US10Y / DXY / gold with portfolio-aware impact analysis | "Track VIX and US10Y" |
-| [**Theme Research**](skills/alphagbm-theme-research/) | Group tickers into themes (AI infra, HK dividend) + news keyword watching | "Create an AI infra theme" |
-| [**Health Check**](skills/alphagbm-health-check/) | Weekly audit: stale profiles, thesis drift, orphan pages → 0-100 score | "Audit my research brain" |
+| Skill | 功能说明 | 示例查询 |
+|------|---------|---------|
+| [**公司档案**](skills/alphagbm-company-profile/) | 自动构建研究文件：基本面、PE/PB 区间、风险信号、事件雷达 | "将 NVDA 加入我的知识库" |
+| [**投资逻辑**](skills/alphagbm-investment-thesis/) | 买入理由 + 结构化卖出触发点，自动监控 | "我为什么买了 AAPL？" |
+| [**宏观视角**](skills/alphagbm-macro-view/) | 追踪 VIX / 美债 10 年 / 美元指数 / 黄金，带组合影响分析 | "追踪 VIX 和美债 10 年" |
+| [**主题研究**](skills/alphagbm-theme-research/) | 将股票按主题分组（AI 基础设施、港股红利等）+ 新闻关键词监控 | "创建 AI 基础设施主题" |
+| [**健康检查**](skills/alphagbm-health-check/) | 每周审计：过期档案、逻辑漂移、孤立页面 → 0-100 分 | "审计我的研究大脑" |
 
-### See Also
+### 延伸阅读
 
-- **[Investment Masters](https://github.com/AlphaGBM/investment-masters)** -- 10 masters' methodologies (Buffett, Dalio, Soros, Marks...) + 13F tracking
+- **[Investment Masters](https://github.com/AlphaGBM/investment-masters)** -- 10 位大师方法论（巴菲特、达利欧、索罗斯、马克斯……）+ 13F 追踪
 
-## Architecture
+## 架构
 
 ```
-You / Your AI Agent
-    |  (natural language)
+你 / 你的 AI 智能体
+    |  （自然语言）
 +------------------------------------------------------+
-|              AlphaGBM Skills (this repo)              |
+|              AlphaGBM Skills（本仓库）                |
 |                                                       |
-|  Stock    Options   Vol      Strategy   Greeks   ...  |
-|  Analysis  Score   Surface   Builder    Dashboard     |
+|  股票    期权   波动率    策略     希腊值   ...         |
+|  分析    评分   曲面     构建器   仪表盘               |
 +-------------------------+-----------------------------+
                           |
                +----------+----------+
                v                     v
-         Mock Data              AlphaGBM API
-      (built-in, free)      (alphagbm.zeabur.app)
-                             Real-time market data
-                             IV/HV/VRP/Greeks/Skew
+           模拟数据              AlphaGBM API
+        （内置，免费）        （alphagbm.zeabur.app）
+                              实时市场数据
+                              IV/HV/VRP/希腊值/偏斜
 ```
 
-### How Skills Connect
+### Skills 如何联动
 
-Skills aren't isolated -- they reference each other to form a complete workflow:
+Skills 并非孤立——它们相互引用，形成完整工作流：
 
 ```
-Stock Analysis --> Options Score --> Options Strategy --> P&L Simulator
-       |                |                    |
-       v                v                    v
-   Compare          Vol Surface           Greeks
-                    Vol Smile
-                    IV Rank --> Earnings Crush
+股票分析 --> 期权评分 --> 期权策略 --> 盈亏模拟器
+    |            |            |
+    v            v            v
+  对比       波动率曲面      希腊值
+             波动率微笑
+             IV 排名 --> 财报 IV 面板
 
-Market Sentiment --> Unusual Activity --> Alert
-                                          Watchlist
+市场情绪 --> 异常活动 --> 提醒
+                         自选列表
 
-Polymarket --> Market Sentiment --> Options Strategy
+Polymarket --> 市场情绪 --> 期权策略
 ```
 
-## Data Coverage
+## 数据覆盖
 
-| Market | Stocks | Options | Data Points |
-|--------|--------|---------|-------------|
-| US | 200+ | Full chains | IV/HV/VRP/Greeks/Skew/Surface |
-| HK | 35+ | Full chains | IV/HV/VRP/Greeks |
-| CN | 20+ ETFs | Full chains | IV/HV/VRP/Greeks |
-| Commodities | Au/Ag/Cu/Al | Futures options | IV/Greeks/Delivery risk |
+| 市场 | 股票 | 期权 | 数据点 |
+|------|------|------|--------|
+| 美股 | 200+ | 完整链 | IV/HV/VRP/希腊值/偏斜/曲面 |
+| 港股 | 35+ | 完整链 | IV/HV/VRP/希腊值 |
+| A 股 | 20+ ETF | 完整链 | IV/HV/VRP/希腊值 |
+| 大宗商品 | 金/银/铜/铝 | 期货期权 | IV/希腊值/交割风险 |
 
-## Real Data, Not Guesswork
+## 真实数据，而非猜测
 
-Every number in AlphaGBM is **verifiable**:
+AlphaGBM 中的每个数字都是**可验证的**：
 
-| Metric | Value | How It's Computed |
-|--------|-------|-------------------|
-| **IV** | 32.5% | Black-Scholes on actual bid/ask prices |
-| **IV Rank** | 58 | Current IV vs. 252 trading days of history |
-| **VRP** | +4.0% | `Implied Vol - Historical Vol` — measures option overpricing |
-| **Option Score** | 80/100 | Weighted: premium yield + support/resistance + safety margin + trend + PoP + liquidity + time decay |
-| **Stock Score** | 7.0/10 | `G = B + M` — Basics (PE, PEG, growth, margins) + Momentum (VIX, technicals, flow) |
-| **Risk** | 4/10 | Additive: valuation +2, growth +2, liquidity +2, market +1.5, technical +1 |
-| **EV** | +5.2% | `50% × 1w + 30% × 1m + 20% × 3m` expected value |
+| 指标 | 数值 | 计算方式 |
+|------|------|---------|
+| **IV** | 32.5% | 基于实际买卖价的 Black-Scholes |
+| **IV 排名** | 58 | 当前 IV vs. 252 个交易日历史 |
+| **VRP** | +4.0% | `隐含波动率 - 历史波动率`——衡量期权溢价程度 |
+| **期权评分** | 80/100 | 加权：权利金收益率 + 支撑/阻力 + 安全边际 + 趋势 + 胜率 + 流动性 + 时间衰减 |
+| **股票评分** | 7.0/10 | `G = B + M`——基本面（PE、PEG、增长、利润率）+ 动量（VIX、技术面、流量） |
+| **风险** | 4/10 | 加总：估值 +2、增长 +2、流动性 +2、市场 +1.5、技术面 +1 |
+| **EV** | +5.2% | `50% × 1周 + 30% × 1月 + 20% × 3月` 期望值 |
 
-This is not *"based on my training data"* or *"I estimate with 85% confidence."*
+这不是*"基于我的训练数据"*或*"我以 85% 的置信度估计"*。
 
-This is math on market data.
+这是基于市场数据的数学运算。
 
-## Example Workflow
+## 示例工作流
 
-> **You**: "Analyze AAPL, then find the best options play"
+> **你**："分析 AAPL，然后找出最佳期权策略"
 
-The agent chains skills automatically:
+智能体自动串联 Skills：
 
 ```
 1. GET  /api/stock/quick-quote/AAPL          → $261.40 (-0.8%)
-2. POST /api/stock/analyze-sync              → G=B+M score 7.0/10, EV +5.2%, BUY
-   {"ticker": "AAPL", "style": "balanced"}     Risk 4/10, target $275, stop-loss $239
+2. POST /api/stock/analyze-sync              → G=B+M 评分 7.0/10，EV +5.2%，买入
+   {"ticker": "AAPL", "style": "balanced"}     风险 4/10，目标价 $275，止损 $239
 
-3. GET  /api/options/snapshot/AAPL           → IV 32.5%, IV Rank 58, VRP +4.0%
-4. POST /api/options/chain-sync              → Sell Put scores: 80, 78, 75...
-   {"symbol": "AAPL", "expiry_date": "..."}    Buy Call scores: 76, 74, 72...
+3. GET  /api/options/snapshot/AAPL           → IV 32.5%，IV 排名 58，VRP +4.0%
+4. POST /api/options/chain-sync              → 卖 Put 评分：80, 78, 75...
+   {"symbol": "AAPL", "expiry_date": "..."}    买 Call 评分：76, 74, 72...
 
-5. POST /api/options/tools/strategy/build    → Bull Call Spread 265/280
-   {"template_id": "bull_call_spread"}         Max profit $1085, max loss $415
+5. POST /api/options/tools/strategy/build    → 牛市看涨价差 265/280
+   {"template_id": "bull_call_spread"}         最大收益 $1085，最大亏损 $415
 
-6. POST /api/options/tools/simulate          → Breakeven $269.15, PoP 44.5%
+6. POST /api/options/tools/simulate          → 盈亏平衡点 $269.15，胜率 44.5%
    {"symbol": "AAPL", "legs": [...]}
 ```
 
-> **You**: "Is that IV expensive?"
+> **你**："那个 IV 贵吗？"
 
 ```
-7. GET  /api/options/snapshot/AAPL           → IV Rank 58 (moderate)
-8. GET  /api/options/tools/vol-surface/AAPL  → ATM IV in contango, earnings in 26d
+7. GET  /api/options/snapshot/AAPL           → IV 排名 58（中等）
+8. GET  /api/options/tools/vol-surface/AAPL  → 平值 IV 处于正向期限结构，26 天后财报
 ```
 
-All from real API calls. All verifiable.
+所有数据均来自真实 API 调用，全部可验证。
 
-## Roadmap
+## 路线图
 
-- [x] 26 Skills with mock data
-- [x] Claude Code & Cursor support
-- [x] CLI tool (`pip install -e ./cli`)
-- [ ] Real-time WebSocket feeds
-- [ ] Community strategy sharing
-- [ ] More markets (EU, JP, KR options)
+- [x] 26 个 Skills 含模拟数据
+- [x] 支持 Claude Code 与 Cursor
+- [x] CLI 工具（`pip install -e ./cli`）
+- [ ] 实时 WebSocket 数据推送
+- [ ] 社区策略共享
+- [ ] 更多市场（欧股、日股、韩股期权）
 
-## Contributing
+## 贡献指南
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. We welcome:
+详见 [CONTRIBUTING.md](CONTRIBUTING.md)。欢迎：
 
-- Bug reports & feature requests
-- Skill improvements & new skill proposals
-- Translations (currently EN + CN)
-- Mock data for additional tickers
+- Bug 报告与功能请求
+- Skills 改进与新 Skills 提案
+- 翻译（当前支持中英文）
+- 更多股票的模拟数据
 
-## License
+## 许可证
 
-MIT -- see [LICENSE](LICENSE).
+MIT——详见 [LICENSE](LICENSE)。
 
-## Links
+## 链接
 
-- [alphagbm.com](https://alphagbm.com) -- Full platform with live data
-- [API Documentation](https://alphagbm.com/docs)
-- [Discord Community](https://discord.gg/alphagbm)
+- [alphagbm.com](https://alphagbm.com) -- 含实时数据的完整平台
+- [API 文档](https://alphagbm.com/docs)
+- [Discord 社区](https://discord.gg/alphagbm)
 - [Twitter/X](https://x.com/alphagbm)
 
 ---
 
 <div align="center">
 
-**Built by the [AlphaGBM](https://alphagbm.com) team. Trusted by 10,000+ traders worldwide.**
+**由 [AlphaGBM](https://alphagbm.com) 团队打造，受全球 10,000+ 交易者信赖。**
 
-*Real data. Real signals. Real edge.*
+*真实数据。真实信号。真实优势。*
 
 </div>
