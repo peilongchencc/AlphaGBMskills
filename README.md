@@ -20,7 +20,21 @@
 git clone https://github.com/AlphaGBM/skills.git .claude/skills/alphagbm
 ```
 
-然后问你的 AI：*"使用 AlphaGBM 分析 AAPL 期权"* —— 无需 API Key，内置数据即刻生效。
+> 使用上述指令会在当前目录下创建一个 `.claude/skills/alphagbm` 目录，并将当前项目的所有文件夹/文件拷贝到该目录下。
+> 目录结构如下：
+
+```bash
+.claude/
+└── skills/
+    └── alphagbm/
+         ├── assets/
+         ├── cli/
+         ├── skills/
+         ├── .gitignore
+         └── ...
+```
+
+然后通过ClaudeCode问你的 AI：*"使用 AlphaGBM 分析 AAPL 期权"* —— 无需 API Key，内置数据即刻生效，会自动调用这些Skills来分析AAPL的期权。
 
 ## 什么是 AlphaGBM？
 
