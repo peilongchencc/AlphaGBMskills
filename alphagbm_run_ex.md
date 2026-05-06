@@ -1,6 +1,6 @@
-(base) peilongchencc@chenpeilongdeMacBook-Pro ex_gbm % 使用 AlphaGBM 分析 AAPL 期权
+(base) peilongchencc@chenpeilongdeMacBook-Pro AlphaGBMskills % 使用 AlphaGBM 分析 AAPL 期权
 zsh: command not found: 使用
-(base) peilongchencc@chenpeilongdeMacBook-Pro ex_gbm % claude
+(base) peilongchencc@chenpeilongdeMacBook-Pro AlphaGBMskills % claude
 ╭─── Claude Code v2.1.129 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │                                      │ Tips for getting started                                                                                     │
 │             Welcome back!            │ Run /init to create a CLAUDE.md file with instructions for Claude                                            │
@@ -10,7 +10,7 @@ zsh: command not found: 使用
 │                 ▘▘ ▝▝                │ Added `CLAUDE_CODE_FORCE_SYNC_OUTPUT=1` env var to force-enable synchronized output on terminals that auto-… │
 │                                      │ Added `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`: when set on Homebrew or WinGet installations, Claude Code … │
 │   qwen3.6-plus · API Usage Billing   │ /release-notes for more                                                                                      │
-│           ~/Desktop/ex_gbm           │                                                                                                              │
+│           ~/Desktop/AlphaGBMskills           │                                                                                                              │
 ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
 ❯ 使用 AlphaGBM 分析 AAPL 期权                                                                                                                         
@@ -703,4 +703,4 @@ zsh: command not found: 使用
                                                                                                                                                        
 Resume this session with:
 claude --resume f16fd32b-0b6e-48d7-88ac-85eca60a7f1b
-(base) peilongchencc@chenpeilongdeMacBook-Pro ex_gbm % 
+(base) peilongchencc@chenpeilongdeMacBook-Pro AlphaGBMskills % 
