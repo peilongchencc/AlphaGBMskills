@@ -10,17 +10,17 @@
 
 [官网](https://alphagbm.com) · [文档](#skills-overview) · [快速开始](#quick-start) · [贡献指南](CONTRIBUTING.md)
 
+</div>
+
 ---
 
-### 30 秒演示
+## 30 秒演示
 
 ```bash
 git clone https://github.com/AlphaGBM/skills.git .claude/skills/alphagbm
 ```
 
 然后问你的 AI：*"使用 AlphaGBM 分析 AAPL 期权"* —— 无需 API Key，内置数据即刻生效。
-
-</div>
 
 ## 什么是 AlphaGBM？
 
