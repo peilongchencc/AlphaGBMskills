@@ -1,5 +1,3 @@
-(base) peilongchencc@chenpeilongdeMacBook-Pro AlphaGBMskills % 使用 AlphaGBM 分析 AAPL 期权
-zsh: command not found: 使用
 (base) peilongchencc@chenpeilongdeMacBook-Pro AlphaGBMskills % claude
 ╭─── Claude Code v2.1.129 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │                                      │ Tips for getting started                                                                                     │
